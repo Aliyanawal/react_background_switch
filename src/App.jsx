@@ -1,31 +1,34 @@
 import React , {useState} from "react";
 
+import Counter from "./components/counter";
+import Toggle from "./components/toggle";
+import Log from "./components/login";
+import Colour from "./components/changeColor";
+
+
+
 function App(){
-  const [isDark, setIsDark] = useState(false);
+  const PStyle= {
+    textAlign:'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    
 
+  };
 
+  return(
 
-function toggleTheme(){
-  setIsDark(!isDark);
-}
-
-const pageStyle = {
-  backgroundColor: isDark ? "Black" : "White" ,
-  color: isDark ? "White" : "Black" ,
-  height: '100vh',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column'
-
-};
-
-return(
-  <div style={pageStyle}>
-    <button onClick = {toggleTheme}>Switch Theme</button>
-  </div>
-);
-
+    <div style = {PStyle}>
+      
+       <Toggle/>
+       <Counter/>
+       <Log/>
+       <br></br>
+       <Colour/>
+    </div>
+  );
+  
+ 
 
 }
 
